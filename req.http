@@ -1,0 +1,29 @@
+### Create User
+POST http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+ "username":"ravi456",
+ "email":"ravi456@gmail.com",
+ "dateOfBirth":"2000-12-03",
+ "mobileNumber":909090
+}
+
+###
+
+### Read All Users
+GET http://localhost:4000/user-api/users
+
+###
+
+### Read User By ID
+GET http://localhost:4000/user-api/users/<id>
+
+###
+
+### Delete User By ID
+DELETE http://localhost:4000/user-api/users/<id>
+
+# safe to not send any content coz no need nay info from client
+### Activate User
+PATCH http://localhost:4000/user-api/users/<id>
