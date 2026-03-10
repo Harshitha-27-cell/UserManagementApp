@@ -13,7 +13,7 @@ export default function UsersList() {
 
  useEffect(()=>{
   async function getUsers(){
-    let res=await fetch('http://localhost:4000/user-api/users')
+    let res=await fetch('/user-api/users')
 
     if(res.status==200){
       //extract json data

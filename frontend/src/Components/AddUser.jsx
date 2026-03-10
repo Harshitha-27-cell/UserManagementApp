@@ -7,7 +7,7 @@ export default function AddUser() {
  const onUserCreate=async(newUser)=>{
   console.log(newUser);
 
-  let res=await fetch('http://localhost:4000/user-api/user',{
+  let res=await fetch('/user-api/user',{
     method:'POST',
     headers:{
       'Content-Type':'application/json'

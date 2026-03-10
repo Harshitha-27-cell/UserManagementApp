@@ -10,13 +10,13 @@ dotenv.config();
 
 //Create HTTP server
 const app=exp();
-const port=process.env.PORT || 4000;
+const port=process.env.PORT;
 
 //Add body parser middleware
 app.use(exp.json());
 
 app.use(cors({
-    origin:['http://localhost:5173']         //complete this 
+    origin:['*']         //complete this 
 }))
 
 //Forward req to UserAPI if path starts with /user-api
@@ -28,7 +28,6 @@ async function connectDB(){
  try{
   await connect(process.env.DB_URL);
   console.log('DB Connection success');
-  app.listen(port,()=>console.log(`Server listening on port ${port}...`));
  }
  catch(err){
   console.log('Err in DB connection:',err);
@@ -67,3 +66,5 @@ app.use((err,req,res,next)=>{
   message:'Internal Server Error'
  });
 });
+
+export default app;

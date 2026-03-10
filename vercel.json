@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/user-api/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/$1"
+    }
+  ]
+}
