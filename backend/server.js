@@ -10,7 +10,7 @@ dotenv.config();
 
 //Create HTTP server
 const app=exp();
-const port=process.env.PORT;
+const port=process.env.PORT || 4000;
 
 //Add body parser middleware
 app.use(exp.json());
@@ -28,6 +28,12 @@ async function connectDB(){
  try{
   await connect(process.env.DB_URL);
   console.log('DB Connection success');
+
+  //start server after DB connection
+  app.listen(port,()=>{
+    console.log(`Server listening on port ${port}`);
+  });
+
  }
  catch(err){
   console.log('Err in DB connection:',err);
