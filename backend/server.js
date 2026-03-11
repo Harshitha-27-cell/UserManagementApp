@@ -15,9 +15,7 @@ const port=process.env.PORT || 4000;
 //Add body parser middleware
 app.use(exp.json());
 
-app.use(cors({
-    origin:['*']         //complete this 
-}))
+app.use(cors());
 
 //Forward req to UserAPI if path starts with /user-api
 app.use('/user-api',userRoute);
