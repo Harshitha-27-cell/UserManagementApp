@@ -13,7 +13,7 @@ export default function UsersList() {
 
  useEffect(()=>{
   async function getUsers(){
-    let res=await fetch('/user-api/users')
+    let res=await fetch('https://user-management-backend-xj2x.onrender.com/user-api/users')
 
     if(res.status==200){
       //extract json data

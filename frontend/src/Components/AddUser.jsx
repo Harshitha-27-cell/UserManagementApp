@@ -7,7 +7,7 @@ export default function AddUser() {
  const onUserCreate=async(newUser)=>{
   console.log(newUser);
 
-  let res=await fetch('/user-api/user',{
+  let res=await fetch('https://user-management-backend-xj2x.onrender.com/user-api/user',{
     method:'POST',
     headers:{
       'Content-Type':'application/json'
@@ -61,5 +61,4 @@ return(
 
   </div>
 )
-
 }
